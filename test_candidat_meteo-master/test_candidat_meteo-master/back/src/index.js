@@ -20,19 +20,14 @@ app.use(cors({
 
 // Initialisation de la base avec les deux tables nécessaires (à garder)
 db.init();
-// exemple de requete sql à supprimer
-db.all('select * from city').then((rows) => {
-  console.log(rows);
-});
+
 
 
 
 const citiesRouter=require('./routes/cities')
 const weatherRouter=require('./routes/weatherForecast')
 
-app.get('/',(req,res)=>{
-  response.send("Hello World")
-})
+
 
 app.use("/cities",citiesRouter)
 app.use("/weather",weatherRouter)
